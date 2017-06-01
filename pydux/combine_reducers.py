@@ -14,7 +14,7 @@ def get_undefined_state_error_message(key, action):
             'state.' % (action_name, key))
 
 def assert_reducer_sanity(reducers):
-    for key, reducer in reducers.iteritems():
+    for key, reducer in reducers.items():
         initial_state = reducer(None, {'type': ActionTypes.INIT})
 
         if initial_state is None:
@@ -41,7 +41,7 @@ def assert_reducer_sanity(reducers):
 def combine_reducers(reducers):
     """
     composition tool for creating reducer trees.
-   
+
     Args:
         reducers: dict with state keys and reducer functions
                   that are responsible for each key
